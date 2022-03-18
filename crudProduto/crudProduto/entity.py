@@ -1,42 +1,42 @@
 class Produto():
     
     def __init__(self,id:int,nome:str, descricao:str, quantidade: int, valor: float):
-        self.id = id 
-        self.nome = nome
-        self.descricao = descricao
-        self.quantidade = quantidade
-        self.valor = valor
+        self._id = id 
+        self._nome = nome
+        self._descricao = descricao
+        self._quantidade = quantidade
+        self._valor = valor
 
     
     def get_id(self):
-        return self.id 
+        return self._id 
 
     def set_id(self,id):
-        self.id = id
+        self._id = id
         
     def get_nome(self):
-        return self.nome
+        return self._nome
 
     def set_nome(self,nome):
-        self.nome = nome
+        self._nome = nome
 
     def get_descricao(self):
-        return self.descricao
+        return self._descricao
     
     def set_descricao(self,descricao):
-        self.descricao = descricao
+        self._descricao = descricao
 
     def get_quantidade(self):
-        return self.quantidade
+        return self._quantidade
 
     def set_quantidade(self,quantidade):
-        self.quantidade = quantidade
+        self._quantidade = quantidade
     
     def get_valor(self):
-        return self.valor
+        return self._valor
     
     def set_valor(self,valor):
-        self.valor = valor
+        self._valor = valor
     
 
 

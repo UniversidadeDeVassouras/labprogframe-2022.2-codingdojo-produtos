@@ -8,5 +8,17 @@ produto2 = Produto(2, "Smart watch", "Rélógio Bolado", 4, 10.70)
 produto3 = Produto(3, 'Relógio do Vovô', "Até meu avô tem", 5, 189.90)
 produtos = [produto1, produto2, produto3]
 
-def listaProduto(request):
+def produto(request):
     return render(request,"index.html",{"lista":produtos})
+
+
+def ver_produto(request, id:int):
+    for produto in produtos:
+        if produto.get_id() == id:
+            return render(request,"produtos.html",{"produto":produto})
+
+def adicionar_produto(request):
+    if request.method == "GET":
+        return render(request, "adicionar.html")
+    elif request.method == "POST":
+        pass
