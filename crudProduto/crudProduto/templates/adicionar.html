@@ -7,10 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <label>Nome</label>
+    <form method="post" > 
+        {% csrf_token %}
+        <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">
-        <label>Descrição</label>   
+        <label for="descricao">Descrição</label> 
+        <input type="text" name="descricao" id="descricao">
+        <label for="valor">Valor</label>
+        <input type="number" step="0.01" name="valor" id="valor">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" name="quantidade" id="quantidade">
+        <button type="submit" id="botao_cadastrar">Cadastrar</button>
     </form>
 </body>
 </html>

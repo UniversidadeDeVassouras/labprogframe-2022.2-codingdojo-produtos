@@ -23,5 +23,6 @@ from crudProduto import views
 urlpatterns = [
     path('produto/', views.produto, name='home'),
     path('produto/<int:id>',views.ver_produto, name='produto'),
-    path('produto/adicionar/', views.adicionar_produto, name="produto_adicionar")
+    path('produto/adicionar/', views.adicionar_produto, name="produto_adicionar"),
+    path('produto/deletar/<id>',views.deletar_produto, name='deletar_produto')
 ]

@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    {% if erro %} {{ erro }}  {% endif %}
+
+
     {% for produto in lista %}
     <div>
             <h1>
@@ -16,7 +19,22 @@
                 {{produto.get_descricao}}
             </p>
         </div>
-
+        <div>
+            <button onclick="deletar('{{produto.get_id}}')">Excluir</button>
+        </div>
+        
     {%endfor%}
+    <div>
+        <a href="{% url 'produto_adicionar' %}">Adicionar</a>
+    </div>
 </body>
+
+<script>
+    function deletar(id){
+        let httpRequest = new XMLHttpRequest();
+        httpRequest.open('DELETE', "{% url 'deletar_produto' id='REPLACE_ID'%}".replace("REPLACE_ID", id));
+        
+        
+    }
+</script>
 </html>
