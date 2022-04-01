@@ -22,7 +22,7 @@
         <div>
             <button onclick="deletar('{{produto.get_id}}')">Excluir</button>
         </div>
-        
+    </div>    
     {%endfor%}
     <div>
         <a href="{% url 'produto_adicionar' %}">Adicionar</a>
@@ -33,7 +33,17 @@
     function deletar(id){
         let httpRequest = new XMLHttpRequest();
         httpRequest.open('DELETE', "{% url 'deletar_produto' id='REPLACE_ID'%}".replace("REPLACE_ID", id));
-        
+        httpRequest.setRequestHeader("NAME", "CSRF");
+        httpRequest.onreadystatechange = function() {
+            if(httpRequest.readyState === XMLHttpRequest.DONE) {
+                if(httpRequest.status === 200) {
+                    console.log(httpRequest.response);
+                } else {
+                    alert(`Deu ruim! Status ${httpRequest.status}`);
+                }
+            }        
+        };
+        httpRequest.send();
         
     }
 </script>

@@ -1,0 +1,14 @@
+{% for produto in lista %}
+    <div>
+            <h1>
+            <a href=" {% url 'produto' produto.get_id %} ">{{produto.get_nome}}</a>
+            </h1>
+            <p>
+                {{produto.get_descricao}}
+            </p>
+        </div>
+        <div>
+            <button onclick="deletar('{{produto.get_id}}')">Excluir</button>
+        </div>
+    </div>   
+{%endfor%}

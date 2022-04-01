@@ -37,5 +37,5 @@ def deletar_produto(request, id):
         for produto in produtos:
             if produto.get_id() == int(id):
                 produtos.remove(produto)
-                return render(request,"index.html",{"lista":produtos})
+                return render(request,"produto-list.html",{"lista":produtos})
         return render(request,"index.html",{"lista":produtos,"erro":"Produto não encontrado." })
